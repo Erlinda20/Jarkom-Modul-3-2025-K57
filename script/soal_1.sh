@@ -1,6 +1,6 @@
 # di Durin
 
-// isi dari nano /root/.basrhc
+# isi dari nano /root/.basrhc
 echo "nameserver 192.168.122.1" > /etc/resolv.conf
 apt update && apt install iptables -y
 echo 1 > /proc/sys/net/ipv4/ip_forward
@@ -8,6 +8,6 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.92.0.0/16
 
 lalu ping google.com -c 2 
 
-// kalau gagal bisa tambahkan 
+# kalau gagal bisa tambahkan 
 ip route
 ip route add default via 192.168.122.1 dev eth0
