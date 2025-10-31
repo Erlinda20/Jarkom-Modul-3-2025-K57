@@ -1,19 +1,13 @@
 # di Durin
-ip addr add 192.168.122.50/24 dev eth0 && ip route add default via 192.168.122.1
-ip addr add 10.92.1.1/24 dev eth1 && ip link set eth1 up
 
-
-#coba ping dulu 
-ping -c 3 192.168.122.1
-
-#berikan internet
+// isi dari nano /root/.basrhc
 echo "nameserver 192.168.122.1" > /etc/resolv.conf
-
-#install iptables
 apt update && apt install iptables -y
-
-#aktifkan IP forwading dijalankan di Durin
 echo 1 > /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.92.0.0/16
 
-#aktifkan NAT
-iptables -t nat -A POSTROUTING -o eth0 -s 10.92.0.0/16 -j MASQUERADE
+lalu ping google.com -c 2 
+
+// kalau gagal bisa tambahkan 
+ip route
+ip route add default via 192.168.122.1 dev eth0
