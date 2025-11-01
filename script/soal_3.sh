@@ -31,5 +31,5 @@ option domain-name-servers 192.168.122.1;
 # menjadi (karena menunjukkan DNS resolver semua client diarahkan ke Minastir)
 option domain-name-servers 10.92.5.2;  
 
-# Testing in khamul or elendil  or salah satu node
+# Testing in elendil  or salah satu node
 ping google.com -c 2

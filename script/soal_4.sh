@@ -6,6 +6,9 @@ ln -s /etc/init.d/named /etc/init.d/bind9
 
 # buat folder
 mkdir -p /etc/bind/k57
+
+# buat file konfigurasi zona
+nano /etc/bind/named.conf.local
 # tambah file zona
 zone "k57.com" {
     type master;
